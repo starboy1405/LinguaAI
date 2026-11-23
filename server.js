@@ -7,7 +7,7 @@ const PORT = 3000;
 
 app.use(express.json({ limit: "100kb" }));
 
-const frontendPath = path.join(__dirname, "/frontend");
+const frontendPath = path.join(__dirname, "Frontend");
 
 function getLanguageCode(language) {
     const languages = {
