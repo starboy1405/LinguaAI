@@ -3,7 +3,7 @@ const express = require("express");
 const path = require("path");
 
 const app = express();
-const PORT = 3000;
+const PORT = process.env.PORT || 3000;
 
 app.use(express.json({ limit: "100kb" }));
 
@@ -122,7 +122,7 @@ app.post("/api/translate", async (req, res) => {
 
 app.use(express.static(frontendPath));
 
-app.listen(PORT, () => {
+app.listen(PORT, "0.0.0.0", () => {
     console.log("LinguaAI backend started!");
     console.log(`Application: http://localhost:${PORT}`);
     console.log(`Health: http://localhost:${PORT}/api/health`);
